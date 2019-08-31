@@ -50,10 +50,8 @@ export class ListComponent implements OnInit, AfterViewInit {
       if (this.selectedIndex > 0) {
         this.selectedIndex = this.selectedIndex - 1;
         const boundingRect = this.htmlListItems[this.selectedIndex].getBoundingClientRect();
-        const tmp = (this.elem.nativeElement.clientHeight - boundingRect.height - boundingRect.bottom);
-        console.log(tmp, this.elem.nativeElement.clientHeight);
-        if (tmp > this.elem.nativeElement.clientHeight) {
-          this.elem.nativeElement.scrollBy({ top: boundingRect.top - boundingRect.height, behavior: "instant" });
+        if(boundingRect.top < 0){
+          this.elem.nativeElement.scrollBy({ top: -boundingRect.height, behavior: "instant" });
         }
         this.selectedItemChange.emit(this.list[this.selectedIndex]);
       }

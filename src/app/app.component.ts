@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   simpleList = ['carrot', 'banana', 'apple', 'potato', 'tomato', 'cabbage', 'turnip', 'okra', 'onion', 'cherries', 'plum', 'mango', 'kiwi', 'avocado', 'garlic', 'pineapple', 'sapota', 'cauliflower', 'lettuce', 'peas', 'pomegranate', 'watermelon', 'grapes'];
   complexList = [];
   selected = null;
+  selectedTemplateEg = 'banana';
   complexSelected = null;
 
   constructor(private mockData: MockDataService) {}

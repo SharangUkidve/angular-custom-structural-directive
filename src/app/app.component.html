@@ -1,19 +1,38 @@
-<app-list [list]="simpleList" [(selectedItem)]="selected" class="simple-list">
-  <ng-container *appListItem="let listItem">
-    {{listItem}}
-  </ng-container>
-</app-list>
-<app-list [list]="complexList" [(selectedItem)]="complexSelected" class="complex-list-container">
-  <div *appListItem="let listItem" class="complex-list-item">
-    <img [src]="listItem.imageUrl" />
-    <div class="main-content">
-      <div>{{listItem.title}}</div>
-      <small>{{listItem.date}}</small>
+<!-- Simple Text List -->
+<section class="list-container">
+  <h4 class="section-title">Simple List</h4>
+  <app-list [list]="simpleList" [(selectedItem)]="selected" class="simple-list">
+    <ng-container *appListItem="let listItem">
+      {{listItem}}
+    </ng-container>
+  </app-list>
+</section>
+<!-- Complex List Customizable -->
+<section class="list-container">
+  <h4 class="section-title">Complex List</h4>
+  <app-list [list]="complexList" [(selectedItem)]="complexSelected" class="complex-list-container">
+    <div *appListItem="let listItem" class="complex-list-item">
+      <img [src]="listItem.imageUrl" />
+      <div class="main-content">
+        <div>{{listItem.title}}</div>
+        <small>{{listItem.date}}</small>
+      </div>
+      <div class="rating">
+        <i class="material-icons">star</i>
+        {{listItem.rating}}
+      </div>
+      <i class="material-icons favorite" *ngIf="listItem.favorite">favorite</i>
     </div>
-    <div class="rating">
-      <i class="material-icons">star</i>
-      {{listItem.rating}}
-    </div>
-    <i class="material-icons favorite" *ngIf="listItem.favorite">favorite</i>
-  </div>
-</app-list>
+  </app-list>
+</section>
+<!-- Usage with Ng Template -->
+<section class="list-container">
+  <h4 class="section-title">Simple with NgTemplate List</h4>
+  <app-list [list]="simpleList" [(selectedItem)]="selectedTemplateEg" class="simple-list">
+    <ng-template appListItem let-listItem>
+      {{listItem}}
+    </ng-template>
+  </app-list>
+</section>
+
+
