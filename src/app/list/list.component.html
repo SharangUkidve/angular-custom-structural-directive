@@ -1,0 +1,6 @@
+<ul class="demo-list" tabindex="1" (keydown)="changeSelection($event)">
+  <li *ngFor="let item of list; index as i" [ngClass]="{'selected-item': item === selectedItem}" 
+      class="demo-list-item" (click)="selectListItem(item, i)" #li>
+    <ng-container *ngTemplateOutlet="listItem.template; context: {$implicit: item}"></ng-container>
+  </li>
+</ul>

@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  height: 100%; 
+}
+.complex-list-container {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  overflow: auto;
+
+  .complex-list-item {
+    display: flex;
+    align-items: center;
+
+    .main-content {
+      padding: 0 10px;
+      small {
+        color: #999999;
+      }
+    }
+
+    .rating {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      
+      i {
+        margin: 5px;
+        color: gold;
+      }
+    }
+    .favorite {
+      color: deeppink;
+    }
+  }
+}
+
+.simple-list {
+  display: block;
+  width: 50%;
+  border: 1px solid #cccccc;
+  overflow: auto;
+}
